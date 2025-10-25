@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Migrated color system to Tailwind 4.0 @theme directive */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(15.27% 0 0);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(15.27% 0 0);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(15.27% 0 0);
+  --color-primary: oklch(24.51% 0 0);
+  --color-primary-foreground: oklch(98.04% 0 0);
+  --color-secondary: oklch(96.08% 0 0);
+  --color-secondary-foreground: oklch(24.51% 0 0);
+  --color-muted: oklch(96.08% 0 0);
+  --color-muted-foreground: oklch(52.55% 0 0);
+  --color-accent: oklch(96.08% 0 0);
+  --color-accent-foreground: oklch(24.51% 0 0);
+  --color-destructive: oklch(59.18% 0.227 29.234);
+  --color-destructive-foreground: oklch(98.04% 0 0);
+  --color-border: oklch(90.2% 0 0);
+  --color-input: oklch(90.2% 0 0);
+  --color-ring: oklch(15.27% 0 0);
+  --color-chart-1: oklch(70.35% 0.143 49.33);
+  --color-chart-2: oklch(56.86% 0.088 200.86);
+  --color-chart-3: oklch(42.75% 0.068 229.79);
+  --color-chart-4: oklch(78.82% 0.134 92.28);
+  --color-chart-5: oklch(76.27% 0.167 53.39);
+
+  /* Added border radius variables */
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  /* Added sidebar color variables */
+  --color-sidebar-background: oklch(98.04% 0 0);
+  --color-sidebar-foreground: oklch(39.84% 0.017 256.85);
+  --color-sidebar-primary: oklch(27.84% 0.03 256.85);
+  --color-sidebar-primary-foreground: oklch(98.04% 0 0);
+  --color-sidebar-accent: oklch(95.88% 0.004 256.85);
+  --color-sidebar-accent-foreground: oklch(27.84% 0.03 256.85);
+  --color-sidebar-border: oklch(91.19% 0.013 253.4);
+  --color-sidebar-ring: oklch(63.94% 0.225 254.62);
+
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --radius-xl: calc(var(--radius-lg) + 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    /* Dark mode color overrides */
+    --color-background: oklch(15.27% 0 0);
+    --color-foreground: oklch(98.04% 0 0);
+    --color-card: oklch(15.27% 0 0);
+    --color-card-foreground: oklch(98.04% 0 0);
+    --color-popover: oklch(15.27% 0 0);
+    --color-popover-foreground: oklch(98.04% 0 0);
+    --color-primary: oklch(98.04% 0 0);
+    --color-primary-foreground: oklch(24.51% 0 0);
+    --color-secondary: oklch(33.73% 0 0);
+    --color-secondary-foreground: oklch(98.04% 0 0);
+    --color-muted: oklch(33.73% 0 0);
+    --color-muted-foreground: oklch(68.63% 0 0);
+    --color-accent: oklch(33.73% 0 0);
+    --color-accent-foreground: oklch(98.04% 0 0);
+    --color-destructive: oklch(44.12% 0.148 29.234);
+    --color-destructive-foreground: oklch(98.04% 0 0);
+    --color-border: oklch(33.73% 0 0);
+    --color-input: oklch(33.73% 0 0);
+    --color-ring: oklch(85.88% 0 0);
+    --color-chart-1: oklch(59.18% 0.152 254.62);
+    --color-chart-2: oklch(56.27% 0.108 192.17);
+    --color-chart-3: oklch(67.45% 0.149 70.67);
+    --color-chart-4: oklch(68.24% 0.121 293.33);
+    --color-chart-5: oklch(66.67% 0.149 12.23);
+    --color-sidebar-background: oklch(27.84% 0.03 256.85);
+    --color-sidebar-foreground: oklch(95.88% 0.004 256.85);
+    --color-sidebar-primary: oklch(60.78% 0.169 257.42);
+    --color-sidebar-primary-foreground: oklch(100% 0 0);
+    --color-sidebar-accent: oklch(35.29% 0.015 256.85);
+    --color-sidebar-accent-foreground: oklch(95.88% 0.004 256.85);
+    --color-sidebar-border: oklch(35.29% 0.015 256.85);
+    --color-sidebar-ring: oklch(63.94% 0.225 254.62);
+  }
+}
+
+/* Custom utility for text balance */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Base styles using Tailwind 4.0 syntax */
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+}
